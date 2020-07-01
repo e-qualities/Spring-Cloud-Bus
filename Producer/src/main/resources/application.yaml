@@ -1,0 +1,23 @@
+server:
+  port: 8001
+  
+# configs for /actuator/info endpoint
+info:
+  app: 
+    name: "${spring.application.name}"
+    description: "A simple message producer."
+    version: "1.0.0"
+
+spring:
+  application:
+    name: message-producer
+
+---
+# for local deployment only.
+spring.profiles: default
+
+management:
+  endpoints:
+    web: 
+      exposure:
+        include: '*'
