@@ -56,7 +56,7 @@ Feel free to inspect the code for details.
 
 Spring Cloud Bus is based on Spring Cloud Stream, and is a lightweight message bus.
 Spring Cloud Bus uses Spring's `ApplicationEvent` mechanism to send and receive events from an application.
-Normally, Spring's `ApplicationEvent` mechanism is used to send and receive events within the same application, and often this mechanism is used inside an application to get informed about lifecycle events of the Spring application. An `ApplicationEvent` is sent via the Spring `ApplicationContext`'s `publishEvent()` method and usually received by implementing an `ApplicationEventListener` or by annotating an event listener method with the `@EventListener` annotation.
+Normally, Spring's `ApplicationEvent` mechanism is used to send and receive events within the same application, and often this mechanism is used inside an application to get informed about lifecycle events of the Spring application. An `ApplicationEvent` is sent via Spring `ApplicationContext`'s `publishEvent()` method and usually received by implementing an `ApplicationEventListener` or by annotating an event listener method with the `@EventListener` annotation.
 
 Spring Cloud Bus introduces a custom `ApplicationEventListener` under the hood that intercepts these application-local events (sent via the Spring application context) and - if they are targeted for a remote application - sends them out via Spring Cloud Stream to a message broker middleware (like Solace PubSub+ or RabbitMQ).
 To distinguish "local" events from those targeted for remote applications, Spring Cloud Bus introduced the `RemoteApplicationEvent` - a type derived from `ApplicationEvent` and intended as superclass for event types that are to be sent _between_ applications and via Spring Cloud Bus.
@@ -118,7 +118,7 @@ public class SpringCloudBusConfiguration {
 Spring Cloud Bus uses Spring Cloud Stream which provides an abstraction over a variety of common messaging infrastructure.
 Most notably Spring Cloud Stream supports RabbitMQ, Kafka, Amazon Kinesis, Solace PubSub+, Google PubSub and others.
 
-In this sample we use Solace PubSub+ as the broker middleware - simply it is less common to find a sample that shows its usage.
+In this sample we use Solace PubSub+ as the broker middleware - simply because it is less common to find a sample that shows its usage.
 However, the code shown here does not depend on Solace PubSub+ at all. In fact you can easily use the same sample with a RabbitMQ or Kafka instance.
 All you need to do is replace the Solace PubSub+ dependency in `pom.xml` for that of RabbitMQ or Kafka.
 
