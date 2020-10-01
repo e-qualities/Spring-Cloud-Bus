@@ -10,7 +10,8 @@ In this branch we show the usage of Spring Cloud Bus. The sample features:
 > Note: In this sample we use Solace PubSub+ as the broker middleware. Thanks to the usage of Spring Cloud Stream (which is underlying to Spring Cloud Bus) this could be easily exchanged for Kafka, RabbitMQ, Amazon Kinesis or even other brokers.
 
 Here a short introduction presented on Solace's Lightning Talks. You can find the slides in the [assets](./assets) folder.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sKPPGb75s4c?start=517" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[![thumbnail](./assets/thumbnail.png)](https://youtu.be/sKPPGb75s4c?t=520)
 
 # Building the Project
 
